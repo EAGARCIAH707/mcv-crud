@@ -5,7 +5,7 @@
  */
 package com.andevs.taller.mvc.view;
 
-import com.andevs.taller.mvc.controller.PersonController;
+import com.andevs.taller.mvc.controller.LoginController;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -21,7 +21,7 @@ public class LoginView extends javax.swing.JFrame {
         initComponents();
     }
 
-    public void addController(PersonController personController) {
+    public void addController(LoginController personController) {
         getLogin().addActionListener(personController);
     }
 
@@ -63,11 +63,6 @@ public class LoginView extends javax.swing.JFrame {
         fieldUser.setForeground(new java.awt.Color(255, 255, 255));
         fieldUser.setText("admin");
         fieldUser.setCaretColor(new java.awt.Color(255, 255, 255));
-        fieldUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldUserActionPerformed(evt);
-            }
-        });
 
         fieldPass.setEditable(false);
         fieldPass.setBackground(new java.awt.Color(0, 0, 188));
@@ -140,10 +135,6 @@ public class LoginView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void fieldUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldUserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fieldUserActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField fieldPass;

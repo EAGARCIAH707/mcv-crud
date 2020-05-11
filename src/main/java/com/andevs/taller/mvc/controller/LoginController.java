@@ -8,11 +8,11 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PersonController implements ActionListener {
+public class LoginController implements ActionListener {
     private final LoginView personView;
     private IPersonDAO personDAO;
 
-    public PersonController(LoginView personView) {
+    public LoginController(LoginView personView) {
         this.personView = personView;
         this.personDAO = new PersonDAO();
     }
