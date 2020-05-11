@@ -4,6 +4,7 @@ import com.andevs.taller.mvc.model.connection.ConnectionDB;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LoginRepository implements ILoginRepository {
@@ -22,9 +23,14 @@ public class LoginRepository implements ILoginRepository {
         statement.setString(1, user);
         statement.setString(2, password);
         statement.executeQuery();
-        int result = statement.executeUpdate();
-        if (result != 0) {
-            return Boolean.TRUE;
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()) {
+            int id = resultSet.getInt("login_id");
+            String name = resultSet.getString("_user");
+            if (id > 0) {
+                System.out.println("registered user : ".concat(name));
+                return Boolean.TRUE;
+            }
         }
         return Boolean.FALSE;
     }

@@ -2,17 +2,17 @@ package com.andevs.taller.mvc.controller;
 
 import com.andevs.taller.mvc.model.dao.IPersonDAO;
 import com.andevs.taller.mvc.model.dao.PersonDAO;
-import com.andevs.taller.mvc.view.PersonView;
+import com.andevs.taller.mvc.view.LoginView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PersonController implements ActionListener {
-    private final PersonView personView;
+    private final LoginView personView;
     private IPersonDAO personDAO;
 
-    public PersonController(PersonView personView) {
+    public PersonController(LoginView personView) {
         this.personView = personView;
         this.personDAO = new PersonDAO();
     }

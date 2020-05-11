@@ -15,9 +15,9 @@ import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class PersonView extends javax.swing.JFrame {
+public class LoginView extends javax.swing.JFrame {
 
-    public PersonView() {
+    public LoginView() {
         initComponents();
     }
 
