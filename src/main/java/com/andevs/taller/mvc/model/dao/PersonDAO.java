@@ -6,6 +6,7 @@ import com.andevs.taller.mvc.model.repository.IPersonRepository;
 import com.andevs.taller.mvc.model.repository.LoginRepository;
 import com.andevs.taller.mvc.model.repository.PersonRepository;
 
+import java.util.List;
 import java.util.Map;
 
 public class PersonDAO implements IPersonDAO {
@@ -26,12 +27,12 @@ public class PersonDAO implements IPersonDAO {
         }
     }
 
-    public Boolean save(Map<String, Object> params) {
+    public Boolean save(Map<String, String> params) {
         try {
-            Long document_number = (Long) params.get("document_number");
-            String name = params.get("name").toString();
-            Double weight = (Double) params.get("weight");
-            Double height = (Double) params.get("height");
+            Long document_number = Long.parseLong(params.get("document_number"));
+            String name = params.get("name");
+            Double weight = Double.parseDouble(params.get("weight"));
+            Double height = Double.parseDouble(params.get("height"));
             return personRepository.save(PersonEntity.builder()
                     .document_number(document_number)
                     .name(name)
@@ -44,13 +45,13 @@ public class PersonDAO implements IPersonDAO {
         }
     }
 
-    public Boolean update(Map<String, Object> params) {
+    public Boolean update(Map<String, String> params) {
         try {
-            Integer id_person = (Integer) params.get("id_person");
-            Long document_number = (Long) params.get("document_number");
-            String name = params.get("name").toString();
-            Double weight = (Double) params.get("weight");
-            Double height = (Double) params.get("height");
+            Integer id_person = Integer.parseInt(params.get("id_person"));
+            Long document_number = Long.parseLong(params.get("document_number"));
+            String name = params.get("name");
+            Double weight = Double.parseDouble(params.get("weight"));
+            Double height = Double.parseDouble(params.get("height"));
             return personRepository.update(PersonEntity.builder()
                     .id_person(id_person)
                     .document_number(document_number)
@@ -64,11 +65,32 @@ public class PersonDAO implements IPersonDAO {
         }
     }
 
-    public void deleteById(Integer idPerson) {
+    public Boolean deleteById(Integer idPerson) {
         try {
             personRepository.deleteById(idPerson);
+            return Boolean.TRUE;
         } catch (Exception e) {
             System.out.println("Error in delete " + e.getMessage());
         }
+        return Boolean.FALSE;
+    }
+
+    public PersonEntity findByDocumentNumber(Integer idPerson) {
+        try {
+            return personRepository.findByDocumentNumber(idPerson);
+
+        } catch (Exception e) {
+            System.out.println("Error in findByDocumentNumber " + e.getMessage());
+        }
+        return PersonEntity.builder().build();
+    }
+
+    public List<PersonEntity> findAll() {
+        try {
+            return personRepository.findAll();
+        } catch (Exception e) {
+            System.out.println("Error in findAll " + e.getMessage());
+        }
+        return null;
     }
 }

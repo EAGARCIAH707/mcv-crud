@@ -5,11 +5,11 @@
  */
 package com.andevs.taller.mvc.view;
 
+import com.andevs.taller.mvc.controller.PersonController;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- *
  * @author AndresG
  */
 @EqualsAndHashCode(callSuper = true)
@@ -23,6 +23,18 @@ public class PersonView extends javax.swing.JFrame {
         initComponents();
     }
 
+    public void addController(PersonController personController) {
+        getCreate().addActionListener(personController);
+        getRead().addActionListener(personController);
+        getDelete().addActionListener(personController);
+        getUpdate().addActionListener(personController);
+        getReadAll().addActionListener(personController);
+        getAbout().addActionListener(personController);
+        getClean().addActionListener(personController);
+        getExit().addActionListener(personController);
+
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,41 +44,49 @@ public class PersonView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollBar1 = new javax.swing.JScrollBar();
         panelPerson = new org.edisoncor.gui.panel.PanelImage();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblDocNumber = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblHeigth = new javax.swing.JLabel();
+        lblWeigth = new javax.swing.JLabel();
         fieldDocNumber = new javax.swing.JTextField();
         fieldName = new javax.swing.JTextField();
         fieldWeigth = new javax.swing.JTextField();
         fieldHeight = new javax.swing.JTextField();
-        save = new org.edisoncor.gui.button.ButtonIpod();
+        create = new org.edisoncor.gui.button.ButtonIpod();
         update = new org.edisoncor.gui.button.ButtonIpod();
         delete = new org.edisoncor.gui.button.ButtonIpod();
         read = new org.edisoncor.gui.button.ButtonIpod();
         exit = new org.edisoncor.gui.button.ButtonIpod();
         readAll = new org.edisoncor.gui.button.ButtonIpod();
+        fieldIdPerson = new javax.swing.JLabel();
+        lblCreatedOn = new javax.swing.JLabel();
+        lblHeigth2 = new javax.swing.JLabel();
+        lblHeigth3 = new javax.swing.JLabel();
+        lblLastModified = new javax.swing.JLabel();
+        clean = new org.edisoncor.gui.button.ButtonIpod();
+        about = new org.edisoncor.gui.button.ButtonIpod();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panelPerson.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Identificacion :");
+        lblDocNumber.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblDocNumber.setForeground(new java.awt.Color(255, 255, 255));
+        lblDocNumber.setText("Identificacion :");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Nombre :");
+        lblName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
+        lblName.setText("Nombre :");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Altura :");
+        lblHeigth.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblHeigth.setForeground(new java.awt.Color(255, 255, 255));
+        lblHeigth.setText("Altura :");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Peso :");
+        lblWeigth.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblWeigth.setForeground(new java.awt.Color(255, 255, 255));
+        lblWeigth.setText("Peso :");
 
         fieldDocNumber.setBackground(new java.awt.Color(0, 0, 188));
         fieldDocNumber.setForeground(new java.awt.Color(255, 255, 255));
@@ -84,8 +104,8 @@ public class PersonView extends javax.swing.JFrame {
         fieldHeight.setForeground(new java.awt.Color(255, 255, 255));
         fieldHeight.setCaretColor(new java.awt.Color(255, 255, 255));
 
-        save.setText("Grabar");
-        save.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        create.setText("Grabar");
+        create.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         update.setText("Actualizar");
         update.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -107,6 +127,39 @@ public class PersonView extends javax.swing.JFrame {
             }
         });
 
+        fieldIdPerson.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        fieldIdPerson.setForeground(new java.awt.Color(255, 255, 255));
+
+        lblCreatedOn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblCreatedOn.setForeground(new java.awt.Color(255, 255, 255));
+
+        lblHeigth2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblHeigth2.setForeground(new java.awt.Color(255, 255, 255));
+        lblHeigth2.setText("Actualizado :");
+
+        lblHeigth3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblHeigth3.setForeground(new java.awt.Color(255, 255, 255));
+        lblHeigth3.setText("Creado :");
+
+        lblLastModified.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblLastModified.setForeground(new java.awt.Color(255, 255, 255));
+
+        clean.setText("Limpiar");
+        clean.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        clean.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cleanActionPerformed(evt);
+            }
+        });
+
+        about.setText("About");
+        about.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        about.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aboutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelPersonLayout = new javax.swing.GroupLayout(panelPerson);
         panelPerson.setLayout(panelPersonLayout);
         panelPersonLayout.setHorizontalGroup(
@@ -115,62 +168,91 @@ public class PersonView extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(panelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelPersonLayout.createSequentialGroup()
+                        .addComponent(fieldIdPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelPersonLayout.createSequentialGroup()
                         .addGroup(panelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4))
-                        .addGap(47, 47, 47)
-                        .addGroup(panelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(fieldWeigth, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(fieldHeight, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(fieldName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lblName)
+                            .addComponent(lblWeigth)
+                            .addComponent(lblHeigth)
+                            .addComponent(lblDocNumber)
+                            .addComponent(lblHeigth2)
+                            .addComponent(lblHeigth3))
+                        .addGap(27, 27, 27)
+                        .addGroup(panelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblLastModified, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblCreatedOn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(fieldWeigth)
+                            .addComponent(fieldHeight)
+                            .addGroup(panelPersonLayout.createSequentialGroup()
+                                .addGroup(panelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(fieldDocNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(fieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(99, 99, 99))))
+            .addGroup(panelPersonLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addGroup(panelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(create, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelPersonLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(fieldDocNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelPersonLayout.createSequentialGroup()
-                        .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(read, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelPersonLayout.createSequentialGroup()
+                        .addComponent(readAll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(panelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(readAll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                        .addComponent(clean, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(about, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         panelPersonLayout.setVerticalGroup(
             panelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPersonLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(readAll, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
+                .addComponent(fieldIdPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
                 .addGroup(panelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(lblDocNumber)
                     .addComponent(fieldDocNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(panelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(lblName)
                     .addComponent(fieldName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(panelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
+                    .addComponent(lblWeigth)
                     .addComponent(fieldWeigth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(panelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
+                    .addComponent(lblHeigth)
                     .addComponent(fieldHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
+                .addGroup(panelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblHeigth3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblCreatedOn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addGroup(panelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblHeigth2)
+                    .addComponent(lblLastModified, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(panelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(create, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(read, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                    .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panelPersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(readAll, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(clean, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(about, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -191,23 +273,38 @@ public class PersonView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_readAllActionPerformed
 
+    private void cleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cleanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cleanActionPerformed
+
+    private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_aboutActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private org.edisoncor.gui.button.ButtonIpod about;
+    private org.edisoncor.gui.button.ButtonIpod clean;
+    private org.edisoncor.gui.button.ButtonIpod create;
     private org.edisoncor.gui.button.ButtonIpod delete;
     private org.edisoncor.gui.button.ButtonIpod exit;
     private javax.swing.JTextField fieldDocNumber;
     private javax.swing.JTextField fieldHeight;
+    private javax.swing.JLabel fieldIdPerson;
     private javax.swing.JTextField fieldName;
     private javax.swing.JTextField fieldWeigth;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollBar jScrollBar1;
+    private javax.swing.JLabel lblCreatedOn;
+    private javax.swing.JLabel lblDocNumber;
+    private javax.swing.JLabel lblHeigth;
+    private javax.swing.JLabel lblHeigth2;
+    private javax.swing.JLabel lblHeigth3;
+    private javax.swing.JLabel lblLastModified;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblWeigth;
     private org.edisoncor.gui.panel.PanelImage panelPerson;
     private org.edisoncor.gui.button.ButtonIpod read;
     private org.edisoncor.gui.button.ButtonIpod readAll;
-    private org.edisoncor.gui.button.ButtonIpod save;
     private org.edisoncor.gui.button.ButtonIpod update;
     // End of variables declaration//GEN-END:variables
 }
