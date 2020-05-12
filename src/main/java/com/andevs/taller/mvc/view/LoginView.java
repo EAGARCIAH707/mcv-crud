@@ -58,7 +58,7 @@ public class LoginView extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Contraseña :");
+        jLabel3.setText("Contrasenia :");
 
         fieldUser.setBackground(new java.awt.Color(0, 0, 188));
         fieldUser.setForeground(new java.awt.Color(255, 255, 255));
@@ -73,7 +73,7 @@ public class LoginView extends javax.swing.JFrame {
 
         showPass.setBackground(new java.awt.Color(0, 0, 145));
         showPass.setForeground(new java.awt.Color(255, 255, 255));
-        showPass.setText("Mostrar contrasena");
+        showPass.setText("Mostrar contrasenia");
 
         login.setText("Ingresar");
 

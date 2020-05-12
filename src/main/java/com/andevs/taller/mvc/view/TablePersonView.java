@@ -6,6 +6,7 @@
 package com.andevs.taller.mvc.view;
 
 import com.andevs.taller.mvc.controller.TablePersonController;
+import javax.swing.WindowConstants;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -21,6 +22,7 @@ public class TablePersonView extends javax.swing.JFrame {
      */
     public TablePersonView() {
         initComponents();
+       this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     }
 
     public void addController(TablePersonController tablePersonController) {
