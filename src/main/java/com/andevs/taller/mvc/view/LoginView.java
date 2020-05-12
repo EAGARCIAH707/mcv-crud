@@ -22,6 +22,7 @@ public class LoginView extends javax.swing.JFrame {
     }
 
     public void addController(LoginController personController) {
+        getShowPass().addActionListener(personController);
         getLogin().addActionListener(personController);
     }
 
@@ -72,7 +73,7 @@ public class LoginView extends javax.swing.JFrame {
 
         showPass.setBackground(new java.awt.Color(0, 0, 145));
         showPass.setForeground(new java.awt.Color(255, 255, 255));
-        showPass.setText("Mostrar contraseña");
+        showPass.setText("Mostrar contrasena");
 
         login.setText("Ingresar");
 

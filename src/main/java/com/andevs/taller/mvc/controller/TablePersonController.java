@@ -22,7 +22,7 @@ public class TablePersonController implements ActionListener {
 
     public void tableWrite() {
         List<PersonEntity> list = personDAO.findAll();
-        String header[] = {"Id", "Document", "Nombre", "Peso", "Altura", "Creado", "Actualizado"};
+        String header[] = {"Id", "Documento", "Nombre", "Peso", "Altura", "Creado", "Actualizado"};
         String[][] data = new String[list.size()][7];
         for (int i = 0; i < list.size(); i++) {
             data[i][0] = list.get(i).getId_person().toString();

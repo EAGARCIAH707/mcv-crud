@@ -38,7 +38,7 @@ public class PersonController implements ActionListener {
             JOptionPane.showMessageDialog(null, "No fue posible grabar",
                     "Alerta", JOptionPane.WARNING_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, "Registro creado con éxito");
+            JOptionPane.showMessageDialog(null, "Registro creado con �xito");
         }
     }
 
@@ -49,7 +49,7 @@ public class PersonController implements ActionListener {
             JOptionPane.showMessageDialog(null, "No fue posible actualizar",
                     "Alerta", JOptionPane.WARNING_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, "Registro actualizado con éxito");
+            JOptionPane.showMessageDialog(null, "Registro actualizado con exito");
         }
     }
 
@@ -133,7 +133,6 @@ public class PersonController implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Mvc Crud\n" + "" +
                         "Creado por Edisson Garcia");
             }
-
 
         } catch (Exception ex) {
             System.out.println("Error in controller " + ex.getMessage());

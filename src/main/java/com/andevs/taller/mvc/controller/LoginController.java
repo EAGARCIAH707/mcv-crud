@@ -35,10 +35,22 @@ public class LoginController implements ActionListener {
         }
     }
 
+    public void showPass() {
+        if (loginView.getShowPass().isSelected()) {
+            loginView.getFieldPass().setEchoChar((char) 0);
+
+        } else {
+            loginView.getFieldPass().setEchoChar('*');
+        }
+    }
+
     public void actionPerformed(ActionEvent e) {
         try {
             if (e.getSource() == loginView.getLogin()) {
                 login();
+            }
+            if (e.getSource() == loginView.getShowPass()) {
+                showPass();
             }
         } catch (Exception ex) {
             System.out.println("Error in controller " + ex.getMessage());
